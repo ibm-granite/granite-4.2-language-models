@@ -33,7 +33,7 @@ pip install torch torchvision torchaudio
 pip install accelerate transformers
 ```
 
-### Basic Inference (Thinking Mode)
+### Inference (Thinking Mode)
 
 ```python
 import torch
@@ -86,7 +86,7 @@ There are **3** r's in the word "strawberry".<|im_end|>
 
 </details>
 
-### Basic Inference (Non-Thinking Mode)
+### Inference (Non-Thinking Mode)
 
 ```python
 messages = [
@@ -136,7 +136,7 @@ Simple answer.
 
 ---
 
-### Basic Tool Calling
+### Tool Calling with Integrated Reasoning
 
 Granite-4.2-3B supports tool calling with integrated reasoning — the model thinks about which tool to call and why before making the call. Tools are defined using the [OpenAI function definition schema](https://platform.openai.com/docs/guides/function-calling).
 
