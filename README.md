@@ -250,7 +250,7 @@ If you find granite models useful, please cite our work as follows:
   author       = {{IBM Research}},
   title        = {Granite 4.2 Language Models},
   year         = {2026},
-  howpublished = {\url{https://huggingface.co/blog/ibm-granite/granit-4-2}},
+  howpublished = {\url{https://huggingface.co/blog/ibm-granite/granite-4-2}},
   note         = {Accessed: 2026-07-25}
 }
 ```
