@@ -12,7 +12,7 @@ Granite is a family of open-source large language models developed by IBM, desig
 
 The Granite 4.2 generation introduces native reasoning (thinking) capabilities, allowing models to perform step-by-step chain-of-thought reasoning before producing final answers. This significantly improves performance on complex math, coding, multi-step logic, and agentic tool-calling tasks. The Granite 4.2 familiy features dense decoder-only architectures in three sizes — 3B, 8B, and 30B, with quantized variants per model size. 
 
-The Granite 4.2 dense models are post-trained on top of Granite v4.1 base models. Please refer to the [Granite 4.1 blog](https://huggingface.co/blog/ibm-granite/granite-4-1) for details on the pre-training phase. We provide instruct models (checkpoints fine-tuned for dialogue, instruction following, helpfulness, safety, and reasoning), as well as quantized variants for each model size.
+The Granite 4.2 dense models are post-trained on top of Granite 4.1 base models. Please refer to the [Granite 4.1 blog](https://huggingface.co/blog/ibm-granite/granite-4-1) for details on the pre-training phase. We provide instruct models checkpoints fine-tuned for dialogue, instruction following, helpfulness, safety, and reasoning, as well as quantized variants for each model size.
 
 All models are publicly released under the Apache 2.0 license, allowing free use for both research and commercial purposes. The data curation and training processes were specifically designed for enterprise scenarios and customization, incorporating governance, risk, and compliance (GRC) evaluations alongside IBM's standard data clearance and document quality review procedures.
 
