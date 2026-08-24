@@ -39,7 +39,7 @@ pip install accelerate transformers
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_path = "ibm-granite/granite-4.2-3b"
+model_path = "ibm-granite/granite-4.2-30b"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(model_path, device_map="cuda", torch_dtype=torch.bfloat16)
 model.eval()
@@ -138,7 +138,7 @@ Simple answer.
 
 ### Tool Calling with Integrated Reasoning
 
-Granite-4.2-3B supports tool calling with integrated reasoning — the model thinks about which tool to call and why before making the call. Tools are defined using the [OpenAI function definition schema](https://platform.openai.com/docs/guides/function-calling).
+Granite-4.2 support tool calling with integrated reasoning — the model thinks about which tool to call and why before making the call. Tools are defined using the [OpenAI function definition schema](https://platform.openai.com/docs/guides/function-calling).
 
 ```python
 tools = [
