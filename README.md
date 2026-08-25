@@ -222,6 +222,30 @@ The current weather in Boston is 72°F, partly cloudy, with 65% humidity.<|im_en
 
 ---
 
+## Results and Comparisons
+
+Granite 4.2 models were evaluated against similarly-sized competitors across reasoning (AIME25), coding (LiveCodeBench v6), instruction following (IFBench, τ³-bench), tool-calling (BFCL v4), and agentic benchmarks (SWE Bench Pro, Terminal-Bench 2.1). At the 3B scale, Granite leads decisively across all tasks. At 8B, Granite matches or exceeds competitors on reasoning and instruction following while being the only model reporting SWE Bench Pro results. At 30B, Granite achieves the highest score on SWE Bench Pro and remains competitive across all benchmarks against models of similar or larger size.
+
+### 3B
+
+<p align="center">
+  <img src="figures/3b-comparison.png" />
+</p>
+
+### 8B
+
+<p align="center">
+  <img src="figures/8b-comparison.png" />
+</p>
+
+### 30B
+
+<p align="center">
+  <img src="figures/30b-comparison.png" />
+</p>
+
+---
+
 ## How to Download our Models?
 The model of choice (`ibm-granite/granite-4.2-8b` in this example) can be cloned using:
 ```shell
