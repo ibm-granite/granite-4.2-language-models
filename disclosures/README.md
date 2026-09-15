@@ -1,8 +1,8 @@
-<br>
+<!-- <br>
 
-> [!NOTE]
-> The IBM Granite 4.2 disclosure files described below are currently being prepared and will be published in this repository soon. Please check back for updates.
-
+ > [!NOTE]
+ > The IBM Granite 4.2 disclosure files described below are currently being prepared and will be published in this repository soon. Please check back for updates.
+-->
 <br>
 
 Overview
@@ -14,6 +14,14 @@ This folder contains model and data metadata disclosures in machine-readable JSO
 How to use the Disclosures
 
 These disclosures can be parsed and extracted for various purposes, including to: aid in the filing of reporting requirements (e.g., the Model Documentation Form for the GP AI Code of Practice, EU AI Act) and/or trigger risk-based controls (e.g., linking safety policies at runtime to data metadata disclosures for data used in the data mix for model training).
+
+<br>
+
+Data Sources Notice
+
+Listing a data source in this Bill of Materials does not mean that content from that source was used in its original, complete, or unmodified form. 
+
+IBM uses controls to help ensure content complies with IBM policies and legal requirements. IBM may also clean, review, label, transform, or standardize data before using it.
 
 <br>
 
