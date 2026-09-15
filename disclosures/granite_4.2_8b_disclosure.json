@@ -1,0 +1,1625 @@
+{
+  "disclosures": {
+    "disclaimer": "Structured dataset metadata used for pre- and post-training IBM Granite 4 base and instruct models is being released as part of IBM's effort to provide the community with highly transparent open source model development. In this spirit, we are releasing metadata related to datasets directly ingested during training and metadata for datasets used to source seed data for IBM's synthetic data pipelines. This structured disclosure is provided in machine readable .JSON format as a governance artifact to inform risk-based controls for downstream model use. For more information on IBM's compliance with AI laws and regulations, go to: https://www.ibm.com/granite and https://www.ibm.com/granite/docs/resources/responsible-use-guide.pdf.",
+    "timestamp": "2026-09-03T14:02:36Z",
+    "model": {
+      "name": "Granite-4.2-8b",
+      "developer": "IBM",
+      "family": "IBM Granite",
+      "version": "4.2",
+      "release_date": "08/25/2026",
+      "approx_parameter_count": 8000000000,
+      "active_approx_parameter_count": 8000000000,
+      "intended_use": "Reasoning, Code Generation, Tool Calling, Agentic Workflows, Multilingual Dialog",
+      "architecture": {
+        "type": "Dense Transformer (Reasoning)",
+        "transformer_class": "GraniteForCausalLM",
+        "layers": 40,
+        "embedding_size": 4096,
+        "context_length": "128K",
+        "head_dim": 128,
+        "MLP_activation": "SwiGLU",
+        "attention_heads": 32,
+        "attention_head_dim": 128,
+        "KV_heads": 8,
+        "MLP_shared_expert_hidden_size": 12800,
+        "positional_embeddings": {
+          "type": "RoPE"
+        }
+      },
+      "license": {
+        "type": "Apache License 2.0",
+        "url": "https://huggingface.co/datasets/choosealicense/licenses/blob/main/markdown/apache-2.0.md"
+      }
+    },
+    "pre-training": {
+      "stage": "initial training phase",
+      "methods": [
+        {
+          "category": "web",
+          "datasets": [
+            {
+              "name": "GneissWeb",
+              "url": "https://huggingface.co/datasets/ibm-granite/GneissWeb",
+              "description": "GneissWeb is a large-scale dataset for LLM pretraining, consisting of around 10 trillion tokens. (Gohari, et al., 2025)",
+              "size_MB": 30200000.0,
+              "languages": "en",
+              "type": "text",
+              "source": "IBM",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Webhose",
+              "url": "",
+              "description": "Unstructured web content in English converted into machine-readable data feeds acquired by IBM.",
+              "size_MB": 170368.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Private non-publicly available datasets obtained from third-parties",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Nemotron-CC",
+              "url": "https://data.commoncrawl.org/contrib/Nemotron/Nemotron-CC/index.html",
+              "description": "A 6.3T token dataset based on Common Crawl, consisting of 4.4T globally deduplicated original tokens and 1.9T synthetically generated tokens.",
+              "size_MB": 11687104.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "DCLM-baseline",
+              "url": "https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0",
+              "description": "A 4T token / 3B document pretraining dataset that achieves strong performance on language model benchmarks.",
+              "size_MB": 11400000.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available dataset",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        },
+        {
+          "category": "code",
+          "datasets": [
+            {
+              "name": "Code Pile",
+              "url": "",
+              "description": "Our code pile is sourced from a combination of publicly available datasets like Github Code Clean, StarCoderdata, and additional public code repositiories and issues from Github. We filter raw data to retain a list of 116 programming languages and only keep files with permissive licenses for model training.",
+              "size_MB": 95559.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "opc-annealing-corpus",
+              "url": "https://huggingface.co/datasets/OpenCoder-LLM/opc-annealing-corpus",
+              "description": "Synthetic data and algorithmic corpus used for opencoder annealing.",
+              "size_MB": 7083.0,
+              "languages": "en, ru, es, zh, bg, it, ko, ja, uk, ar, de, hr, sh, ceb, vi, fr, ro, sq, sr, pt, no, tr, el, fa, gl, la, da, hu, cs, pl, kk, mk, pms, hi, be, ca, id, nl, ka, th, sv, km, he, ur, az, war, sl, si, fi, gu, mn, lt, ilo, wuu, jv, oc, nn, or, et, tt, mr, eo, af, dv, kn, ml, ia, tl, jbo, ta, sk, te, ms, kv, ku, cv, bn, eu, is, uz, hy, ne, lv, pa, sa, cy, bs, ky, tg, lo, ba, my, br, gn, sah,",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "yes",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Granite Feedback",
+              "url": "",
+              "description": "Dataset acquired based on feedback from the internal Granite feedback team. It includes: IBM enterprise, ITops, JCL data, ESG data, Angular data, ESQL data.",
+              "size_MB": 1408851.0,
+              "languages": "en, es, fr, uk, da, de, rw, pl, ja, la, eu, , un, bg, cs, crs, co, ceb, ca, bs, bi, ar, aa, zh, af, vo, zzp, cy, ro, nl, gn, eo, et, gl, hr, fa, fi, fy, gd, id, it, jw, iw, haw, ia, ie, fo, is, ln, hu, ht, ha, gv, ga, ko, lg, mfe, ms, na, mg, lb, ak, mt, no, oc, az, kha, nn, pt, ru, sco, sk, sa, rn, rm, be, ny, sv, ta, tk, ss, sr, sn, sl, tl, tlh, tn, tr, to, uz, war, br, zh-Hant, vi, xh, wo, bn, el, sm, ik, hi, ig, gu, so, kk, kl, ku, lt, ky, kn, mk, mn, mr, lv, ka, ne, ml, om, th, pa, or, qu, sq, tt, tg, sw, te, ug, ur, mi, yi, ba, sd, my, km, ps, su, xx-Bopo, yo, hy, xx-Tavt, fj, zu, ve, xx-Copt, ab, ts, za, hmn, am, lo, si,",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        },
+        {
+          "category": "domain",
+          "datasets": [
+            {
+              "name": "Free Law",
+              "url": "https://huggingface.co/datasets/LLM360/TxT360/tree/main/data/freelaw",
+              "description": "Public-domain legal opinions from the US federal and state courts",
+              "size_MB": 7673.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "USPTO",
+              "url": "https://huggingface.co/datasets/LLM360/TxT360/tree/main/data/uspto",
+              "description": "Collection of US patents granted from 1975 to May 2023, excluding design patents",
+              "size_MB": 7861.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "EDGAR Filings",
+              "url": "",
+              "description": "Annual reports from all the publicly traded companies in the US spanning a period of more than 25 years",
+              "size_MB": 10753.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "SEC Filings",
+              "url": "",
+              "description": "10-K/Q filings from the US Securities and Exchange Commision (SEC) for the years 1934-2022.",
+              "size_MB": 51278.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "FDIC",
+              "url": "",
+              "description": "The data is from the annual submissions of the FDIC",
+              "size_MB": 57.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Earnings Call Transcripts",
+              "url": "",
+              "description": "Transcripts from the quarterly earnings call transcripts, the related stock prices, and the sector index.",
+              "size_MB": 90.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Cybersecurity",
+              "url": "",
+              "description": "Compendium of data crawled from different Web sources about cybersecurity-related topics",
+              "size_MB": 21245.0,
+              "languages": "en, ar, be, bg, ne, de, es, hy, co, bn, yi, sq, id, cy, uk, un, sw, mn, gu, my, ky, eu, is, vi, ur, th, ru, sk, sr, oc, la, ml, jw, hr, gl, fi, et, it, as, cs, dv, el, bs, hu, nl, bo, ca, da, lb, yo, pa, ug, ps, sv, lv, km, fy, pt, no, lt, kn, fr, iw, hi, mg, ka, ko, ja, mr, ro, eo, ta, lo, pl, mt, te, zh, ha, so, mk, ht, ku, su, si, tr, nn, sco, st, ms, af, zh-Hant, ia, sl, sd, uz, tl, fa, ga, gd, az,",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "IBM Documentation",
+              "url": "",
+              "description": "IBM redbooks and product documents, as well as publicly available documentation from Fortune 500 companies.",
+              "size_MB": 892.0,
+              "languages": "en",
+              "type": "text",
+              "source": "IBM",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "ibm.com data",
+              "url": "",
+              "description": "Crawled data from ibm.com websites",
+              "size_MB": 22153.0,
+              "languages": "lt, zh, en, ru, no, pt, sl, zzp, fi, un, su, br, syr, fy, tr, haw, hr, ak, ceb, cy, nl, xx-Yiii, wo, sn, ja, lif, de, ia, crs, uk, ie, sk, ca, eu, zh-Hant, gn, gl, rw, yo, rn, es, mfe, cs, fo, gd, lg, sm, xx-Brah, el, hy, kha, ko, la, sa, so, zu, eo, om, st, tlh, ga, pl, it, ln, ms, sco, th, aa, kl, xh, sv, sr, co, war, da, bs, mi, vo, bg, id, ml, sw, uz, is, mt, ny, nn, xx-Xsux, iw, ar, ik, xx-Vaii, hu, af, rm, xx-Egyp, mn, tg, vi, fr, ht, ve, to, jw, sg, tk, az, be, bi, lb, ka, qu, sq, hmn, ay, gv, kk, ro, fj, mg, tl, xx-Phag, za, et, lv, oc, ts, xx-Nkoo, xx-Copt, tt, xx-Plrd, xx-Qaai, dv, mk, na, ss, tn,",
+              "type": "text",
+              "source": "IBM",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "SAP Knowledge Base",
+              "url": "",
+              "description": "Crawled data from sap.com knowledge support websites",
+              "size_MB": 16100.0,
+              "languages": "en,zh,es,ja,fr,de,pt,zh-Hant,un,ru,nl,hu,it,da,ko,fi,ro,sl,cs,pl,bg,sv,th,sk,no,ms,tr,sr,hr,ar,iw,el,lb,cy,id,gl,bs,rw,hi,vi,ca,la,et,kk,nn,ga,wo,crs,uk,xh,oc,war,co,so,fy,ss,",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Top US Companies",
+              "url": "",
+              "description": "Crawled internet data based on a list of top US companies",
+              "size_MB": 1594201.0,
+              "languages": "en, un, da, sk, et, de, es, tr, sv, it, cs, nl, fr, sl, no, pt, pl, ar, ja, ru, zh, wo, la, ga, ms, ko, sw, zh-Hant, el, sm, tn, crs, hr, id, af, xh, sco, ro, kk, oc, hi, uk, iw, fa, ml, kn, bn, ie, nn, lt, eu, zzp, ca, az, ak, mfe, ia, gl, rm, fi, fy, zu, tt, my, tl, vi, co, gd, sa, th, mr, km, sr, bh, mk, sq, gu, ta, lo, aa, hu, is, hy, lv, rn, am, ka, br, as, ne, vo, rw, bg, to, pa, te, hmn, ht, ur, ti, so, dz, or, bi, kha, syr, be, gn, uz, su, mg, xx-Copt, cy, yo, ss, xx-Runr, war, ps, mt, mn, ky, tg, ik, tk, bs, gv, st, fj, xx-Qaai, ku, ceb, tlh, qu, eo, haw, lg, ln, jw, iu, za, yi, si, mi, xx-Samr, fo, na, ig, om,",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        },
+        {
+          "category": "academic",
+          "datasets": [
+            {
+              "name": "Txt360 Papers",
+              "url": "https://huggingface.co/datasets/LLM360/TxT360",
+              "description": "Scientific and scholarly documents incorporated as one of the curated sources within TxT360, providing domain‑rich academic text for language‑model pretraining. These papers undergo rigorous extraction, filtering, and global deduplication to ensure coherent, information‑dense content suitable for advanced reasoning and knowledge‑intensive tasks.",
+              "size_MB": 161446.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Financial Research Papers",
+              "url": "",
+              "description": "Publicly available financial research paper corpus, curated and filtered by IBM.",
+              "size_MB": 82.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Papers With Code",
+              "url": "",
+              "description": "Selection of publicly available academic papers sourced from the papers with code website.",
+              "size_MB": 14389.0,
+              "languages": "ur, hi, de, af, ja, bg, un, en, hu, tl, ca, fi, th, fr, pl, ka, fa, vi, uk, es, ga, pt, it, hr, ru, el, ko, ro, et, sv, no, zh, zh-Hant, nl, id, bs, tr, None, ar, cs, sq, eo",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        },
+        {
+          "category": "technical",
+          "datasets": [
+            {
+              "name": "Wikipedia - Txt360",
+              "url": "https://huggingface.co/datasets/LLM360/TxT360/tree/main/data/wikipedia",
+              "description": "Wikimedia dataset filtered for high quality content articles",
+              "size_MB": 75666.0,
+              "languages": "af, pl, cv, la, ti, de, sd, hif, kv, ik, os, ce, lmo, kw, bjn, shi, map-bms, ban, wa, gpe, sat, ca, lg, sg, sn, ami, kcg, mdf, fur, kg, pcm, ace, ja, ilo, iu, dz, nl, se, dsb, bo, awa, gan, gu, sah, is, min, bar, ht, koi, pdc, lad, nov, sc, ur, kn, sk, inh, trv, arz, tl, tum, jam, kbd, ml, mwl, mi, pwn, fa, bg, eo, war, cbk-zam, li, guw, nrm, mk, ig, wo, vi, gur, ar, smn, or, fo, av, gom, as, fy, su, nso, zh-min-nan, za, fat, so, vls, wuu, pfl, be-x-old, dag, lld, tet, gcr, ltg, dv, pa, ady, nap, pi, lb, szy, lez, xmf, te, yo, bs, sr, kbp, sq, tt, io, fj, bcl, frp, hy, ug, zea, ms, crh, uk, he, ia, be, nqo, pam, mai, zh, anp, zh-yue, srn, sl, oc, mr, haw, xh, bh, szl, ab, ga, simple, hi, sa, gl, nds, nia, mzn, hsb, ky, nn, ko, tcy, gor, azb, frr, fi, myv, zu, tr, cs, sm, mnw, jbo, tn, pap, bm, ay, pnb, lij, kk, krc, ckb, rw, csb, als, sv, new, eml, got, sco, vec, ln, pnt, pih, olo, rn, stq, sh, sw, shn, th, bpy, es, mrj, ty, to, atj, it, dty, pt, hak, ne, pag, tk, ss, my, rue, ku, din, xal, an, kaa, ast, ha, ta, fon, vep, ny, ve, el, tpi, pms, ks, arc, et, st, gv, br, cu, ceb, km, roa-tara, bn, jv, lt, gag, tg, fiu-vro, nah, blk, ext, mhr, cr, rmy, vo, ba, lbe, tay, nds-nl, lo, uz, skr, glk, ka, chy, id, qu, mg, nv, avk, bat-smg, az, en, hr, mni, ki, zh-classical, pcd, hyw, tyv, no, mad, co, diq, fr, gd, chr, alt, ee, lfn, lv, ksh, mt, am, ch, roa-rup, bi, ps, yi, bxr, ang, gn, scn, ie, cy, si, bug, hu, tly, da, kl, tw, udm, ru, mn, ro, cdo, ary, ff, eu, guc, ts, kab, om, rm",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Finance Textbooks",
+              "url": "",
+              "description": "Finance textbooks obtained by crawling https://open.umn.edu/opentextbooks/subjects/finance",
+              "size_MB": 5.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Deepmind PG-19",
+              "url": "",
+              "description": "Books crawled from Deepmind PG-19",
+              "size_MB": 1611.0,
+              "languages": "it, no, da, el, ru, es, uk, ar, la, fr, ja, nn, pt, sv, un, de, iw, ie, cs, nl, ga, pl, rw, sl, xx-Copt, en, None, tr, bg, sr,",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Web crawling",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "LOC-PD-Books",
+              "url": "https://huggingface.co/datasets/storytracer/LoC-PD-Books",
+              "description": "This dataset contains more than 140,000 English books (~ 8 billion words) digitised by the Library of Congress (LoC) that are in the public domain in the United States.",
+              "size_MB": 15673.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Cosmopedia V2",
+              "url": "https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus",
+              "description": "An enhanced version of Cosmopedia, the largest synthetic dataset for pre-training, consisting of over 39 million textbooks, blog posts, and stories generated by Mixtral-8x7B-Instruct-v0.1",
+              "size_MB": 67600.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        },
+        {
+          "category": "math",
+          "datasets": [
+            {
+              "name": "DM Math",
+              "url": "https://huggingface.co/datasets/LLM360/TxT360/tree/main/data/dm_maths",
+              "description": "DeepMind Math dataset with generated questions from various topics like algebra, calculus, geometry, etc. and converted to jsonl format.",
+              "size_MB": 173629.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Stack-Exchange - Txt360",
+              "url": "https://huggingface.co/datasets/LLM360/TxT360/tree/main/data/stackexchange",
+              "description": "One of the largest publicly available repositories for question-answer pairs, this dataset is a network of question-and-answer websites on various subjects including programming, science, mathematics, and more.",
+              "size_MB": 35857.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "open-web-math",
+              "url": "https://huggingface.co/datasets/open-web-math/open-web-math",
+              "description": "Contains the majority of the high-quality, mathematical text from the internet.",
+              "size_MB": 17327.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Algebraic-Stack",
+              "url": "https://huggingface.co/datasets/EleutherAI/proof-pile-2",
+              "description": "A new dataset of mathematical code composed of 11B tokens that includes numerical computing, computer algebra, and formal mathematics. This dataset is part of the Proof-Pile-2 collection (Paster et al., 2023).",
+              "size_MB": 7250.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "opc-fineweb-math-corpus",
+              "url": "https://huggingface.co/datasets/OpenCoder-LLM/opc-fineweb-math-corpus",
+              "description": "This math-related data from Fineweb was specifically used in OpenCoder pre-training. We employ fastText in three iterative rounds to recall a final dataset of 55B code and math-related data.",
+              "size_MB": 6466.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "FineMath",
+              "url": "https://huggingface.co/datasets/HuggingFaceTB/finemath",
+              "description": "FineMath consists of 34B tokens (FineMath-3+) and 54B tokens (FineMath-3+ with InfiMM-WebMath-3+) of mathematical educational content filtered from CommonCrawl.",
+              "size_MB": 95494.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "MegaMath",
+              "url": "https://huggingface.co/datasets/LLM360/MegaMath",
+              "description": "MegaMath is an open math pretraining dataset curated from diverse, math-focused sources, with over 300B tokens.",
+              "size_MB": 281100.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "yes",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Nemotron-MIND",
+              "url": "https://huggingface.co/datasets/nvidia/Nemotron-MIND",
+              "description": "A compilation of pretraining data that supports improvements of math reasoning capabilities of the Nemotron5 series of models. Nemotron-MIND contains over 138 billion tokens of structured mathematical dialogues generated by Nemotron4-340B-Instruct.",
+              "size_MB": 264.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "yes",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        },
+        {
+          "category": "multilingual",
+          "datasets": [
+            {
+              "name": "MADLAD-400",
+              "url": "https://huggingface.co/datasets/allenai/MADLAD-400",
+              "description": "MADLAD-400 (Multilingual Audited Dataset: Low-resource And Document-level) is a document-level multilingual dataset based on Common Crawl, covering 419 languages in total. This uses all snapshots of CommonCrawl available as of August 1, 2022. The primary advantage of this dataset over similar datasets is that it is more multilingual (419 languages), it is audited and more highly filtered, and it is document-level.",
+              "size_MB": 844171.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            },
+            {
+              "name": "Fineweb2-edu-multilingual",
+              "url": "",
+              "description": "Internal multilingual dataset, based upon Fineweb2 dataset, filtered for highest quality documents.",
+              "size_MB": 6500000.0,
+              "languages": "en, ja, de, fr, it, ko, ar, zh",
+              "type": "text",
+              "source": "IBM",
+              "data_provenance": "Synthetic data that is not publicly accessible",
+              "user_data": "no",
+              "synthetic": "yes",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        },
+        {
+          "category": "instructions",
+          "datasets": [
+            {
+              "name": "DOLMino dataset mix - Flan partition",
+              "url": "https://huggingface.co/datasets/allenai/dolmino-mix-1124",
+              "description": "Flan partition of the allenai dolmino mix 1124 dataset.",
+              "size_MB": 30737.0,
+              "languages": "en",
+              "type": "text",
+              "source": "third party",
+              "data_provenance": "Publicly available datasets",
+              "user_data": "no",
+              "synthetic": "no",
+              "seed_data": "no",
+              "RL": "no",
+              "SFT": "no"
+            }
+          ]
+        }
+      ]
+    },
+    "post_training": [
+      {
+        "stage": "supervised fine-tuning and alignment",
+        "methods": [
+          {
+            "category": "search",
+            "datasets": [
+              {
+                "name": "OpenResearcher-Dataset",
+                "url": "https://huggingface.co/datasets/OpenResearcher/OpenResearcher-Dataset",
+                "description": "A research-oriented dataset containing tasks and trajectories related to information gathering and analysis. It supports training models for open-ended research workflows.",
+                "size_MB": 7456.79,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "yes"
+              },
+              {
+                "name": "OpenSeeker-v1-Data",
+                "url": "https://huggingface.co/datasets/PolarSeeker/OpenSeeker-v1-Data",
+                "description": "A dataset of open-ended search, retrieval, and reasoning tasks. It supports training research-oriented and information-seeking AI systems.",
+                "size_MB": 3224.77,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "code",
+            "datasets": [
+              {
+                "name": "Nemotron-Math-Proofs-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-Math-Proofs-v1",
+                "description": "A dataset of mathematical proofs and formal reasoning examples. It supports model training for proof generation and rigorous mathematical reasoning.",
+                "size_MB": 29525.17,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "yes"
+              },
+              {
+                "name": "Nemotron-SFT-Competitive-Programming-v2",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Competitive-Programming-v2",
+                "description": "A dataset of competitive programming problems and solutions. It is used to improve algorithmic coding and reasoning performance.",
+                "size_MB": 97312.36,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "agentic",
+            "datasets": [
+              {
+                "name": "Nemotron-SFT-OpenCode-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-OpenCode-v1",
+                "description": "A supervised fine-tuning dataset containing code generation and programming tasks. It supports development of coding-focused language models.",
+                "size_MB": 32693.55,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "EnvScaler-SFT-Traj-9K",
+                "url": "https://huggingface.co/datasets/XXHStudyHard/EnvScaler-SFT-Traj-9K",
+                "description": "A collection of environment interaction trajectories for agent training. It supports scaling agent performance across diverse tasks and environments.",
+                "size_MB": 5294.92,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "hermes-agent-reasoning-traces",
+                "url": "https://huggingface.co/datasets/lambda/hermes-agent-reasoning-traces",
+                "description": "A dataset of agent reasoning traces and decision-making processes. It supports training models to perform structured reasoning and agent workflows.",
+                "size_MB": 1616.11,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "cuda",
+            "datasets": [
+              {
+                "name": "drkernel-coldstart-8k",
+                "url": "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k",
+                "description": "A dataset of expert-curated reasoning and problem-solving examples used for model cold-start training. It supports improved initial reasoning capabilities.",
+                "size_MB": 163.25,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "instruction following",
+            "datasets": [
+              {
+                "name": "Nemotron-Cascade-2-SFT-Data",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-Cascade-2-SFT-Data",
+                "description": "A large supervised fine-tuning dataset covering diverse instruction-following, reasoning, and conversational tasks. It is used as a general-purpose post-training resource.",
+                "size_MB": 592921.0,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "Nemotron-Instruction-Following-Chat-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-Instruction-Following-Chat-v1",
+                "description": "A conversational dataset focused on instruction following and helpful responses. It supports alignment for general assistant behavior.",
+                "size_MB": 7095.08,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "Nemotron-SFT-Instruction-Following-Chat-v2",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Instruction-Following-Chat-v2",
+                "description": "A conversational dataset focused on instruction following and helpful responses. It supports alignment for general assistant behavior.",
+                "size_MB": 16019.29,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "interactive agent customer service",
+            "datasets": [
+              {
+                "name": "Nemotron-Agentic-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-Agentic-v1",
+                "description": "A dataset of agent workflows involving planning, tool use, and task execution. It supports development of autonomous agent capabilities.",
+                "size_MB": 0.0,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "Nemotron-SFT-Agentic-v2",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Agentic-v2",
+                "description": "A supervised fine-tuning dataset for agentic behavior, including planning and tool interactions. It supports post-training of AI agents.",
+                "size_MB": 21860.71,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "multilingual",
+            "datasets": [
+              {
+                "name": "Nemotron-SFT-Multilingual-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Multilingual-v1",
+                "description": "A multilingual instruction dataset covering multiple languages and task types. It supports cross-lingual understanding and generation.",
+                "size_MB": 94570.41,
+                "languages": "de;es;it;fr;ja;zh",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "Multilingual synthetic data",
+                "url": "",
+                "description": "Multilingual synthetic data for improving multilingual performance.",
+                "size_MB": 0.0,
+                "languages": "de;es;it;fr;ja;zh",
+                "type": "text",
+                "source": "IBM",
+                "data_provenance": "Synthetic data that is not publicly accessible",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "safety",
+            "datasets": [
+              {
+                "name": "Nemotron-SFT-Safety-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Safety-v1",
+                "description": "A safety-focused dataset containing prompts and responses related to model alignment and risk mitigation. It supports the development of safer and more reliable AI behavior.",
+                "size_MB": 155.13,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "Synthetic safety data",
+                "url": "",
+                "description": "Synthetic data for improving model safety.",
+                "size_MB": 0.0,
+                "type": "text",
+                "source": "IBM",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "tool calling",
+            "datasets": [
+              {
+                "name": "Synthetic agentic data",
+                "url": "",
+                "description": "Synthetic RL environments and trajectories to improve model on agentic coding.",
+                "size_MB": 0.0,
+                "languages": "en",
+                "type": "text",
+                "source": "IBM",
+                "data_provenance": "Synthetic data that is not publicly accessible",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "agent-data-collection",
+                "url": "https://huggingface.co/datasets/neulab/agent-data-collection/tree/main",
+                "description": "A collection of agent interaction trajectories, tool usage records, and task completions. It supports training and evaluation of autonomous agents.",
+                "size_MB": 498658.0,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "infinibyte",
+            "datasets": [
+              {
+                "name": "Nemotron-Pretraining-Specialized-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Specialized-v1/",
+                "description": "A specialized-domain pretraining dataset covering targeted subject matter. It supports improving model performance in focused knowledge areas.",
+                "size_MB": 0.0,
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "swe",
+            "datasets": [
+              {
+                "name": "Nemotron-SFT-SWE-v2",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2",
+                "description": "A software engineering fine-tuning dataset containing coding and repository-level development tasks. It supports training coding assistants and agents.",
+                "size_MB": 18083.66,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              },
+              {
+                "name": "SWE-Hero-openhands-trajectories",
+                "url": "https://huggingface.co/datasets/nvidia/SWE-Hero-openhands-trajectories",
+                "description": "A dataset of software engineering trajectories and solutions collected from coding agents. It supports training and evaluation on realistic development tasks.",
+                "size_MB": 2402.03,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "formal proofs",
+            "datasets": [
+              {
+                "name": "FineProofs-SFT",
+                "url": "https://huggingface.co/datasets/lm-provers/FineProofs-SFT",
+                "description": "A dataset of mathematical proofs and formal derivations curated for supervised fine-tuning. It supports advanced theorem-proving and reasoning capabilities.",
+                "size_MB": 0.0,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "financial reasoning",
+            "datasets": [
+              {
+                "name": "Nemotron-SpecializedDomains-Finance-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SpecializedDomains-Finance-v1",
+                "description": "A finance-focused dataset covering financial analysis, terminology, and domain-specific tasks. It supports development of financial reasoning capabilities.",
+                "size_MB": 31922.91,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "science",
+            "datasets": [
+              {
+                "name": "Nemotron-Science-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-Science-v1",
+                "description": "A science-focused dataset containing scientific knowledge, reasoning, and analysis tasks. It supports scientific question answering and research applications.",
+                "size_MB": 2601.48,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "math reasoning",
+            "datasets": [
+              {
+                "name": "Nemotron-SFT-Math-v4",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Math-v4",
+                "description": "A supervised fine-tuning dataset of mathematical reasoning and problem-solving examples. It supports development of advanced math capabilities.",
+                "size_MB": 5537.91,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "no",
+                "SFT": "yes"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "stage": "reinforcement learning",
+        "methods": [
+          {
+            "category": "RL blend",
+            "datasets": [
+              {
+                "name": "Nemotron-RL-Super-Training-Blends",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-Super-Training-Blends",
+                "description": "A collection of blended reinforcement learning training datasets spanning reasoning, tool use, coding, safety, instruction following, and software engineering tasks. The dataset combines multiple RL and RLHF sources to support large-scale model alignment and capability development.",
+                "size_MB": 25297.0,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-Ultra-Training-Blends",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-Ultra-Training-Blends",
+                "description": "A set of reinforcement learning and distillation training blends covering reasoning, coding, software engineering, tool use, safety, and question answering. The dataset is designed to support advanced post-training and alignment of large language models.",
+                "size_MB": 11493.5,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "reasoning",
+            "datasets": [
+              {
+                "name": "gpqa",
+                "url": "https://huggingface.co/datasets/Idavidrein/gpqa",
+                "description": "A benchmark dataset of graduate-level, domain-expert questions across scientific disciplines. It is used to evaluate advanced reasoning and knowledge capabilities in language models.",
+                "size_MB": 8.71,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-ARC-AGI-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-ARC-AGI-v1",
+                "description": "A reasoning dataset derived from abstract reasoning and intelligence tasks with verifiable solutions. It is intended to improve generalization and problem-solving capabilities.",
+                "size_MB": 443.28,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "instruction following",
+            "datasets": [
+              {
+                "name": "Nemotron-RL-QA-Abstention-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-QA-Abstention-v1",
+                "description": "A question answering dataset focused on determining when a model should answer versus abstain. It supports training and evaluation of uncertainty awareness and safe response behavior.",
+                "size_MB": 4.68,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-Instruction-Following-MultiTurnChat-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-Instruction-Following-MultiTurnChat-v1",
+                "description": "A multi-turn conversational dataset emphasizing instruction following across extended interactions. It supports coherent and consistent dialogue behavior.",
+                "size_MB": 187.42,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "code",
+            "datasets": [
+              {
+                "name": "Nemotron-RL-coding-competitive_coding",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-coding-competitive_coding",
+                "description": "A coding dataset containing algorithmic programming and competitive coding problems. It supports training models to generate and reason about correct code solutions.",
+                "size_MB": 15680.32,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "R2E-Gym-Subset",
+                "url": "https://huggingface.co/datasets/R2E-Gym/R2E-Gym-Subset",
+                "description": "A software engineering and coding environment dataset containing executable development tasks. It supports agentic coding and reinforcement learning research.",
+                "size_MB": 943.93,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "SWE-Gym",
+                "url": "https://huggingface.co/datasets/SWE-Gym/SWE-Gym",
+                "description": "A software engineering benchmark containing realistic repository-level programming tasks. It is used to train and evaluate coding agents on bug fixing and development workflows.",
+                "size_MB": 43.65,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "SWE-rebench-V2",
+                "url": "https://huggingface.co/datasets/nebius/SWE-rebench-V2",
+                "description": "A benchmark dataset of software engineering tasks and evaluations. It supports assessment of coding agents in realistic development environments.",
+                "size_MB": 428.87,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-instruction_following",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-instruction_following",
+                "description": "An instruction-following dataset containing tasks that assess compliance with user requirements. It supports alignment and controllability of language models.",
+                "size_MB": 77.89,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-InverseIFEval-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-InverseIFEval-v1",
+                "description": "A dataset designed to evaluate and improve instruction-following behavior through inverse evaluation techniques. It supports robust adherence to user instructions.",
+                "size_MB": 13.29,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Multi-subject-RLVR",
+                "url": "https://huggingface.co/datasets/virtuoussy/Multi-subject-RLVR",
+                "description": "A large-scale question answering dataset designed for reinforcement learning with verifiable rewards across diverse subject areas. It contains examples with objectively verifiable answers for reasoning-focused model training.",
+                "size_MB": 73.75,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-ReasoningGym-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-ReasoningGym-v1",
+                "description": "A procedural reasoning dataset containing algorithmically generated tasks across mathematics, logic, puzzles, and games. It is designed for reinforcement learning with deterministic, verifiable rewards.",
+                "size_MB": 30.74,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-Math-Proofs-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-Math-Proofs-v1",
+                "description": "A dataset of mathematical proofs and formal reasoning examples. It supports model training for proof generation and rigorous mathematical reasoning.",
+                "size_MB": 29525.17,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "yes"
+              }
+            ]
+          },
+          {
+            "category": "safety",
+            "datasets": [
+              {
+                "name": "Nemotron-RLHF-GenRM-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RLHF-GenRM-v1",
+                "description": "A preference and reward modeling dataset used for reinforcement learning from feedback. It contains examples for training reward models that score response quality.",
+                "size_MB": 5410.85,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-Safety-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-Safety-v1",
+                "description": "A safety-focused dataset containing prompts and responses related to model alignment and risk mitigation. It supports the development of safer and more reliable AI behavior.",
+                "size_MB": 295.4,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "math",
+            "datasets": [
+              {
+                "name": "Skywork-OR1-RL-Data",
+                "url": "https://huggingface.co/datasets/Skywork/Skywork-OR1-RL-Data",
+                "description": "A reinforcement learning dataset centered on reasoning and verifiable reward tasks. It supports post-training of models for stronger reasoning performance.",
+                "size_MB": 823.11,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "BytedTsinghua-SIA/DAPO-Math-17k",
+                "url": "https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k",
+                "description": "A mathematics dataset containing reasoning-intensive problems with verifiable answers. It is used to strengthen mathematical problem-solving and RL training.",
+                "size_MB": 299.37,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-Math-v2",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-Math-v2",
+                "description": "A mathematics-focused reinforcement learning dataset containing problems with verifiable solutions. It supports development of advanced quantitative reasoning capabilities.",
+                "size_MB": 6.89,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "stem mcqa",
+            "datasets": [
+              {
+                "name": "Nemotron-RL-knowledge-mcqa",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-knowledge-mcqa",
+                "description": "A multiple-choice question answering dataset covering factual and knowledge-based topics. It supports training and evaluating knowledge retrieval and reasoning.",
+                "size_MB": 757.23,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "search",
+            "datasets": [
+              {
+                "name": "WideSeek-R1-train-data",
+                "url": "https://huggingface.co/datasets/RLinf/WideSeek-R1-train-data",
+                "description": "A reasoning-focused training dataset with diverse problem-solving examples. It is intended for post-training models to improve analytical capabilities.",
+                "size_MB": 130.78,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "OpenResearcher-Dataset",
+                "url": "https://huggingface.co/datasets/OpenResearcher/OpenResearcher-Dataset",
+                "description": "A research-oriented dataset containing tasks and trajectories related to information gathering and analysis. It supports training models for open-ended research workflows.",
+                "size_MB": 7456.79,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "yes"
+              },
+              {
+                "name": "DeepDive",
+                "url": "https://huggingface.co/datasets/zai-org/DeepDive",
+                "description": "A dataset of complex research and reasoning tasks requiring multi-step analysis. It supports development of deeper reasoning and investigation abilities.",
+                "size_MB": 35.69,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "QUEST-RL-Data",
+                "url": "https://huggingface.co/datasets/osunlp/QUEST-RL-Data",
+                "description": "A reinforcement learning dataset focused on question answering and reasoning. It provides tasks with verifiable outcomes for model training.",
+                "size_MB": 26.81,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "agentic",
+            "datasets": [
+              {
+                "name": "Nemotron-RL-Agentic-Conversational-Tool-Use-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Conversational-Tool-Use-v1",
+                "description": "A dataset of conversational tasks requiring tool use and agentic behavior. It supports training models to interact with external tools to complete objectives.",
+                "size_MB": 1750.31,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "Nemotron-RL-Agentic-Function-Calling-Pivot-v1",
+                "url": "https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Function-Calling-Pivot-v1",
+                "description": "A dataset focused on structured function calling and API invocation. It supports agentic workflows that require accurate tool selection and parameter generation.",
+                "size_MB": 285.5,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "TMax-15K-Harbor",
+                "url": "https://hub.harborframework.com/datasets/tmax/TMax-15K-Harbor/latest",
+                "description": "A dataset of agent tasks and trajectories collected in interactive environments. It supports training and evaluation of autonomous AI agents.",
+                "size_MB": 60.3,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "seta-env",
+                "url": "https://github.com/camel-ai/seta-env",
+                "description": "An agent environment for evaluating planning, tool use, and task completion. It provides realistic scenarios for agentic model training and assessment.",
+                "size_MB": 22.34,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              },
+              {
+                "name": "terminal-bench-env",
+                "url": "https://github.com/ucsb-mlsec/terminal-bench-env",
+                "description": "A benchmark environment for terminal-based agent tasks. It evaluates coding, system interaction, and problem-solving capabilities.",
+                "size_MB": 349.94,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "yes",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          },
+          {
+            "category": "post-training",
+            "datasets": [
+              {
+                "name": "GoLongRL",
+                "url": "https://huggingface.co/datasets/Kwai-Klear/GoLongRL",
+                "description": "A reinforcement learning dataset focused on long-horizon reasoning and planning tasks. It supports training models to solve problems requiring extended decision sequences.",
+                "size_MB": 2659.04,
+                "languages": "en",
+                "type": "text",
+                "source": "third party",
+                "data_provenance": "Publicly available datasets",
+                "user_data": "no",
+                "synthetic": "no",
+                "seed_data": "no",
+                "RL": "yes",
+                "SFT": "no"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
